@@ -5,7 +5,7 @@ const message = {
     title: 'Engineer'
 };
 
-export const App = ({title, subtitle}) => {
+export const FirstApp = ({title, subtitle}) => {
     return (
         <>
             <h1>{title}</h1>
@@ -16,12 +16,12 @@ export const App = ({title, subtitle}) => {
     );
 }
 
-App.propTypes = {
+FirstApp.propTypes = {
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.number.isRequired
 }
 
-App.defaultProps = {
-    title: 'No hay título',
+FirstApp.defaultProps = {
+    // title: 'No hay título',
     subtitle: 0
 }
