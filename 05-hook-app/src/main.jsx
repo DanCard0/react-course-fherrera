@@ -1,12 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.css';
-import { MainApp } from './09-useContext/MainApp';
-import { HomePage } from './09-useContext/HomePage';
-import { LoginPage } from './09-useContext/LoginPage';
-import { AboutPage } from './09-useContext/AboutPage';
-import { ErrorPage } from './09-useContext/ErrorPage';
+import { routesConfig } from './09-useContext/routesConfig';
 // import { TodoApp } from './08-useReducer/TodoApp';
 // import { Padre } from './07-tarea-memo/Padre';
 // import { CallbackHook } from './06-memos/CallbackHook';
@@ -21,31 +17,7 @@ import { ErrorPage } from './09-useContext/ErrorPage';
 // import { CounterApp } from './01-useState/CounterApp';
 // import { HooksApp } from './HooksApp'
 
-const router = createBrowserRouter([
-  {
-      path: "/",
-      element: <MainApp />,
-      errorElement: <ErrorPage />,
-      children: [
-          {
-              path: "/",
-              element: <HomePage />,
-          },
-          {
-              path: "login",
-              element: <LoginPage />,
-          },
-          {
-              path: "about",
-              element: <AboutPage />,
-          },
-          {
-              path: "*",
-              element: <Navigate to="/about" replace />,
-          }
-      ]
-  }
-]);
+const router = createBrowserRouter(routesConfig);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
